@@ -600,4 +600,73 @@ The text that will be tweeted with the link. Defaults to the title of the page.
 The keyword substitutions `{page_title}` and `{video_name}` can be used in the
 tweet text.
 
+## Midroll Links Plugin
+
+The Midroll Links plugin displays mid-playback links or plaintext notes.
+
+If you want to programmatically set midroll links for a video, check out the [Customizations API]({{ '/data-api#customizations' | post_url }}).
+
+Plugin Option | Type    | Description
+------------- | ------- | -----------
+manualModeOn  | boolean | In manual mode, `links` are ignored and a script can take full control over what links to display, and when. Defaults to `false`.
+links         | array   | An array of objects specifying the links to display at what times. See below.
+
+Link Option | Type    | Description
+----------- | ------- | -----------
+time        | int     | The time this midroll link appears, in seconds. *Required.*
+duration    | int     | The amount of time this midroll link stays visible, in seconds. *Required.*
+text        | string  | The plain text content of this midroll link. HTML is not allowed. *Required.*
+url         | string  | The url to link to. If `null` or `""`, `text` will be shown as plain text instead of as a link. *Optional.*
+
+### Using the Midroll Links plugin
+
+{% codeblock midroll-links-params.html %}
+<script>
+  wistiaEmbed = Wistia.embed("abcde12345", {
+    plugin: {
+      "midrollLink-v1": {
+        links: [
+          {
+            time: 3,
+            duration: 5,
+            text: "Click me!"
+            url: "http://wistia.com"
+          }
+        ]
+      }
+    }
+  });
+</script>
+{% endcodeblock %}
+
+#### Manual mode
+
+In manual mode, your own script can take control of showing links. In this case, you can access the plugin at `wistiaEmbed.plugin['midrollLink-v1']`, and use the methods `forceShowLink` and `forceHideLink` at will. The `forceShowLink` method accepts an object with the same link options as above, but ignores `time` and `duration`.
+
+{% codeblock midroll-links-manual.html %}
+<script>
+  wistiaEmbed = Wistia.embed("abcde12345", {
+    plugin: {
+      "midrollLink-v1": {
+        manualModeOn: true
+      }
+    }
+  });
+
+  var myCustomLink = {text: 'Click here!', url: 'https://wistia.com'};
+  var isShowingLink = false;
+
+  wistiaEmbed.bind('timechange', function(timeInSeconds) {
+    if (timeInSeconds > 10 && timeInSeconds < 20 && !isShowingLink) {
+      wistiaEmbed.plugin['midrollLink-v1'].forceShowLink(myCustomLink);
+      isShowingLink = true;
+    }
+    else if (isShowingLink) {
+      wistiaEmbed.plugin['midrollLink-v1'].forceHideLink();
+      isShowingLink = false;
+    }
+  });
+</script>
+{% endcodeblock %}
+
 <div style="display:none;" class="navigable_end"></div>

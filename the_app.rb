@@ -61,7 +61,7 @@ class TheApp < Sinatra::Base
   get '/search/:q' do
     text = params[:q]
 
-    text.gsub!('_', ' ')
+    text.gsub!('+', ' ')
 
     query = {
       query: {

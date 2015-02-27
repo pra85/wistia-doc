@@ -22,7 +22,7 @@ class Search
     $.getJSON "#{basepath}/search/#{query}?format=json&callback=?", callback
 
   stringify: (str) ->
-    str.replace(/_/g, ' ')
+    str.replace(/\+/g, ' ')
 
   noResultsStr: (query) ->
     """

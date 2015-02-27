@@ -1,5 +1,5 @@
 performSearch = () ->
-  enteredQuery = $('#searchField').val().replace(/[ ]/g, '_')
+  enteredQuery = $('#searchField').val().replace(/[ ]/g, '+')
   window.location.replace "#{basepath}/search?query=#{enteredQuery}"
 
 $('#search button').on 'click', ->

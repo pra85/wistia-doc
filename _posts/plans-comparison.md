@@ -12,7 +12,15 @@ post_intro: |
   <p>Wistia's premium feature Test Drive includes two weeks of access to <em>nearly</em> all the features listed below, with just a small handful of exceptions: Domain Restriction, IP Filtering, and CNAME-ing your account URL. Disabling those features after they're turned on would be pretty hairy, but they work just like you'd expect!</p>
 ---
 
+## Understanding Bandwidth Usage
+
+Bandwidth can be pretty tricky to figure out, and to help with that, we've created a little video that explains the whole thing. Check it out!
+
+{% wistia_embed hashed_id: rt2nx2862m %}
+
 ## Features Comparison
+
+Next up are the features. There's a bunch of them, and you can click a feature name to see relevant info about it.
 
   | Free Plan | Small Business  | Teams     | High Volume
 ----------------------|-----------|-----------------|-----------|-----------

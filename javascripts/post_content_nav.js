@@ -111,7 +111,22 @@
   };
 
   $(function() {
-    return window.navBar = new NavBar;
+    window.navBar = new NavBar;
+    return $('.navigable_start').each(function() {
+      var $start, $subHeaders, $ul;
+      $start = $(this);
+      $subHeaders = $start.nextUntil('.navigable_end', 'h3[id]');
+      $ul = $('<ul class="generated_nav">');
+      $subHeaders.each(function() {
+        var $a, $h3, $li;
+        $h3 = $(this);
+        $li = $('<li>');
+        $a = $('<a>').attr('href', "#" + ($h3.attr('id'))).text($h3.text().replace(/^#/, ''));
+        $li.append($a);
+        return $ul.append($li);
+      });
+      return $start.before($ul);
+    });
   });
 
 }).call(this);

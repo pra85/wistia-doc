@@ -31,7 +31,7 @@ popover=v2 popoverBorderWidth=2" style="width:300px;height:150px;">&nbsp;</div>
 ## Options
 
 For a list of all generic options, refer to the
-[Embed Options]({{ /embed-options | post_url }}) documentation.
+[Embed Options]({{ '/embed-options' | post_url }}) documentation.
 The options listed here are the ones specific to popovers or with special
 popover behavior.
 
@@ -214,7 +214,7 @@ click to launch the popover.
 
 ## Methods
 
-For all methods, refer to the [Player API]({{ /player-api | post_url }}). The
+For all methods, refer to the [Player API]({{ '/player-api' | post_url }}). The
 methods listed here are the ones specific to popovers. Popover methods are
 defined in the `popover` namespace of each player API handle.
 
@@ -288,8 +288,9 @@ video.width(150, { constrain: true });
 ## Events
 
 For a list of all generic events, refer to the
-[Player API]({{ /player-api | post_url }}). The events listed here are the ones
+[Player API]({{ '/player-api' | post_url }}). The events listed here are the ones
 specific to popovers.
+
 
 <div style="display:none;" class="navigable_start"></div>
 

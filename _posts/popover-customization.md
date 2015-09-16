@@ -28,6 +28,8 @@ my popovers, I'd modify the embed code to look like this:
 popover=v2 popoverBorderWidth=2" style="width:300px;height:150px;">&nbsp;</div>
 {% endcodeblock %}
 
+You can set any of the options listed below in exactly the same way.
+
 ## Options
 
 For a list of all generic options, refer to the
@@ -240,7 +242,7 @@ will also be updated to maintain the correct aspect ratio.
 
 {% codeblock wistia_js.js %}
 video.popover.height(100);
-video.height(150, { constrain: true });
+video.popover.height(150, { constrain: true });
 {% endcodeblock %}
 
 ### hide()
@@ -280,7 +282,7 @@ will also be updated to maintain the correct aspect ratio.
 
 {% codeblock wistia_js.js %}
 video.popover.width(100);
-video.width(150, { constrain: true });
+video.popover.width(150, { constrain: true });
 {% endcodeblock %}
 
 <div style="display:none;" class="navigable_end"></div>

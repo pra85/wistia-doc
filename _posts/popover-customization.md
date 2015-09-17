@@ -216,9 +216,10 @@ click to launch the popover.
 
 ## Methods
 
-For all methods, refer to the [Player API]({{ '/player-api' | post_url }}). The
-methods listed here are the ones specific to popovers. Popover methods are
-defined in the `popover` namespace of each player API handle.
+For a list of all methods, refer to the
+[Player API]({{ '/player-api#methods' | post_url }}).  The methods listed here
+are the ones specific to popovers. Popover methods are defined in the `popover`
+namespace of each player API handle.
 
 <div style="display:none;" class="navigable_start"></div>
 
@@ -290,8 +291,8 @@ video.popover.width(150, { constrain: true });
 ## Events
 
 For a list of all generic events, refer to the
-[Player API]({{ '/player-api' | post_url }}). The events listed here are the ones
-specific to popovers.
+[Player API]({{ '/player-api#events' | post_url }}). The events listed here are
+the ones specific to popovers.
 
 
 <div style="display:none;" class="navigable_start"></div>

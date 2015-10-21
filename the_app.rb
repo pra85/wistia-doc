@@ -3,7 +3,7 @@
 #
 
 require 'pp'
-require 'rack/rewrite'
+require 'rack-rewrite'
 require 'elasticsearch'
 require_relative './_config'
 

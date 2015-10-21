@@ -12,7 +12,7 @@ gem 'nokogiri', '~> 1.5.5'
 gem 'rdiscount'
 gem 'sass', '~> 3.2'
 gem 'sinatra', '~> 1.3.3'
-gem 'rack-rewrite', '~> 1.5.0'
+gem 'rack-rewrite', '~> 1.5.1'
 gem 'unicorn'
 gem 'rake'
 

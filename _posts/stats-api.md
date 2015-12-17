@@ -15,7 +15,7 @@ post_intro: "<p>Ever looked at your Wistia heatmaps and wished you could show th
 
 The stats API allows you to retrieve some account-wide information. Don't buy a
 nice car to overcompensate; instead, show off how many hours of your video have
-been played! Or, celebrate when you reach a certain landmark.
+been played! Or, celebrate when you reach a certain landmark. Woo!
 
 #### The Request
 
@@ -611,4 +611,3 @@ Here is the code that we used to embed the heatmap:
 {% codeblock heatmap_example.html %}
 <iframe src="https://api.wistia.com/v1/stats/events/1355283144880f0.12204939918592572/iframe.html?public_token=p5j1mnpakv" height="70" width="100%" style="border: solid 2px black;"></iframe>
 {% endcodeblock %}
-

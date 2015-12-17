@@ -15,7 +15,7 @@ post_intro: "<p>Ever looked at your Wistia heatmaps and wished you could show th
 
 The stats API allows you to retrieve some account-wide information. Don't buy a
 nice car to overcompensate; instead, show off how many hours of your video have
-been played! Or, celebrate when you reach a certain landmark. Woo!
+been played! Or, celebrate when you reach a certain landmark. Wooo!
 
 #### The Request
 

@@ -15,7 +15,7 @@ from it and resize them.
 
 ## Getting the Asset URL
 
-In order to extract a thumbnail, we first need to get the video's URL.
+In order to extract a thumbnail, we first need to get the video's URL. Second we need something else.
 
 To do this, use the <a href="{{ '/data-api' | post_url }}">Data API</a> --
 specifically the <a href="{{ '/data-api' | post_url }}#medias_show">Medias#show endpoint</a>.

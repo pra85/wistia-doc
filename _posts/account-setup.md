@@ -137,7 +137,7 @@ a form to enter your credit card information.
 
 {% post_image hashed_id: '34cfa3061946b0459e777a2f9e20c8f09856d238', width: 600, class: 'center' %}
 
-After updating your credit card, you can check to make sure that your recent payments went through successfully by looking at the [Billing Statements](#billing_statements) section.
+Before or after updating your credit card, you can check to make sure that your recent payments went through successfully by looking at the [Billing Statements](#billing_statements) section.
 
 ---
 

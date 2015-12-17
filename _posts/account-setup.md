@@ -4,7 +4,7 @@ layout: post
 category: Account
 description: Questions about admin type stuff? Account Settings? Billing statements? Don't worry, we've got it all covered right here.
 post_intro: <p> Here's the lowdown on your Account Settings. Billing questions? Need to add a Manager? Just need some light reading? Let's do this. </p>
-footer: 'for_intermediates'
+footer: 'for_beginners'
 ---
 
 ### Opening Your Account Settings

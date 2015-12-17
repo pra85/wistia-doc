@@ -363,7 +363,7 @@ building your audience.
 For more information on video backlinks,
 [see the Customization docs]({{'/customizing-your-video#using_video_backlinks' | post_url}}).
 
-### Can I hear Ben talking about SEO?
+### I'd like to hear Ben talking about SEO?
 
 **Yes!** Our Video SEO expert, Ben, got up-close with the camera to talk about
 the business benefits of using Video SEO properly:

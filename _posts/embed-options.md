@@ -605,7 +605,7 @@ tweet text.
 
 ## Annotations
 
-The Annotations plugin displays mid-playback links or plaintext notes in the top right corner of the video.
+The Annotations plugin displays mid-playback links or plain text notes in the top right corner of the video.
 
 ### Annotations Plugin Options
 
@@ -625,13 +625,13 @@ An array of objects specifying the annotations to display at what times. The opt
 
 ### time
 
-`int`, *required* (but *ignored* if [dynamic](#dynamic-annotations)).
+`int`, *required* (but *ignored* if [dynamic](#dynamic_annotations)).
 
 The time this annotation appears, in seconds.
 
 ### duration
 
-`int`, *required* (but *ignored* if [dynamic](#dynamic-annotations)).
+`int`, *required* (but *ignored* if [dynamic](#dynamic_annotations)).
 
 The amount of time this annotation stays visible, in seconds.
 
@@ -645,13 +645,13 @@ The plain text content of this annotation. HTML is not allowed.
 
 `string`, *optional*.
 
-The url to link to. If unspecified, `null`, or `""`, `text` will be shown as plain text instead of as a link.
+The URL the annotation will link to. If its value is `null`, `""`, or `undefined`, the annotation `text` will be shown as plain text instead of as a link.
 
 <div style="display:none;" class="navigable_end"></div>
 
 ### Annotations Plugin Example
 
-The following will configure an embed with an annotation link which will display when the user is between 0:03 and 0:08 in the video. Note that this will override any existing annotations added in Customize.
+Here's an example code. This code, when added to an embed, will configure an annotation link to display between 0:03 and 0:08 on the video. Note that this will override any existing annotations added in Customize.
 
 {% codeblock annotations-params.html %}
 <script>
@@ -712,7 +712,7 @@ If you'd rather preserve any existing annotations added via Customize and augmen
 
 Your own script can take control of showing and hiding links. In this case, you can register a callback so that when the plugin loads, you can use its methods `.showLink()` and `.hideLink()` at will. The `.showLink()` method accepts an object with the same [annotation options](#annotation_options) as above, but ignores `time` and `duration`.
 
-To ensure your dynamic annotations do not conflict with any existig annotations set in the Customize panel, you must tell the Annotations plugin to ignore them with the `{links: false}` option.
+To ensure your dynamic annotations do not conflict with any existing annotations set in the Customize panel, you must tell the Annotations plugin to ignore them with the `{links: false}` option.
 
 {% codeblock annotations-manual.html %}
 <script>

@@ -301,6 +301,7 @@ The following Embed Plugins are available for Wistia videos:
   [Configure it]({{ '/turnstile' | post_url }}) to pass emails to your Email Marketing platform.
 * [Post-Roll CTA](#postroll_cta) - Suggest an action after viewing.
 * [Socialbar](#socialbar) - Add social sharing buttons to your video player.
+* [Annotations](#annotations) - Add links or notes to your video during playback.
 
 
 ## Turnstile
@@ -600,73 +601,153 @@ The text that will be tweeted with the link. Defaults to the title of the page.
 The keyword substitutions `{page_title}` and `{video_name}` can be used in the
 tweet text.
 
-## Midroll Links Plugin
+<div style="display:none;" class="navigable_end"></div>
 
-The Midroll Links plugin displays mid-playback links or plaintext notes.
+## Annotations
 
-If you want to programmatically set midroll links for a video, check out the [Customizations API]({{ '/data-api#customizations' | post_url }}).
+The Annotations plugin displays mid-playback links or plaintext notes in the top right corner of the video.
 
-Plugin Option | Type    | Description
-------------- | ------- | -----------
-manualModeOn  | boolean | In manual mode, `links` are ignored and a script can take full control over what links to display, and when. Defaults to `false`.
-links         | array   | An array of objects specifying the links to display at what times. See below.
+### Annotations Plugin Options
 
-Link Option | Type    | Description
------------ | ------- | -----------
-time        | int     | The time this midroll link appears, in seconds. *Required.*
-duration    | int     | The amount of time this midroll link stays visible, in seconds. *Required.*
-text        | string  | The plain text content of this midroll link. HTML is not allowed. *Required.*
-url         | string  | The url to link to. If `null` or `""`, `text` will be shown as plain text instead of as a link. *Optional.*
+<div style="display:none;" class="navigable_start"></div>
 
-### Using the Midroll Links plugin
+### links
 
-{% codeblock midroll-links-params.html %}
+`Array`
+
+An array of objects specifying the annotations to display at what times. The options for each annotation are specified [below](#annotation_options).
+
+<div style="display:none;" class="navigable_end"></div>
+
+### Annotation Options
+
+<div style="display:none;" class="navigable_start"></div>
+
+### time
+
+`int`, *required* (but *ignored* if [dynamic](#dynamic-annotations)).
+
+The time this annotation appears, in seconds.
+
+### duration
+
+`int`, *required* (but *ignored* if [dynamic](#dynamic-annotations)).
+
+The amount of time this annotation stays visible, in seconds.
+
+### text
+
+`string`, *required*.
+
+The plain text content of this annotation. HTML is not allowed.
+
+### url
+
+`string`, *optional*.
+
+The url to link to. If unspecified, `null`, or `""`, `text` will be shown as plain text instead of as a link.
+
+<div style="display:none;" class="navigable_end"></div>
+
+### Annotations Plugin Example
+
+The following will configure an embed with an annotation link which will display when the user is between 0:03 and 0:08 in the video. Note that this will override any existing annotations added in Customize.
+
+{% codeblock annotations-params.html %}
 <script>
-  wistiaEmbed = Wistia.embed("abcde12345", {
+(window._wq = window._wq || []).push({
+  "4d8": {
     plugin: {
       "midrollLink-v1": {
         links: [
           {
             time: 3,
             duration: 5,
-            text: "Click me!"
+            text: "Click me!",
             url: "http://wistia.com"
           }
         ]
       }
     }
-  });
+  }
+});
 </script>
+<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+<div class="wistia_embed wistia_async_4d8229898d" style="width:640px;height:360px;">&nbsp;</div>
 {% endcodeblock %}
 
-#### Manual mode
+If you'd rather preserve any existing annotations added via Customize and augment those annotations with your own, you can do so with `.addLink()` or a combination of `.getLinks()` and `.setLinks()`.
 
-In manual mode, your own script can take control of showing links. In this case, you can access the plugin at `wistiaEmbed.plugin['midrollLink-v1']`, and use the methods `forceShowLink` and `forceHideLink` at will. The `forceShowLink` method accepts an object with the same link options as above, but ignores `time` and `duration`.
-
-{% codeblock midroll-links-manual.html %}
+{% codeblock annotations-custom.html %}
 <script>
-  wistiaEmbed = Wistia.embed("abcde12345", {
+(window._wq = window._wq || []).push({
+  "4d8": function(embed) {
+    embed.hasData(function() {
+      embed.plugin('midrollLink-v1', function(annotation) {
+        // add a single annotation like this
+        annotation.addLink({
+          time: 5,
+          duration: 3,
+          text: "I'm a dynamic annotation."
+        })
+        // or add a bunch like this
+        annotation.setLinks(annotation.getLinks().concat([
+          {
+            time: 10,
+            duration: 3,
+            text: "I'm another dynamic annotation.",
+            url: "https://wistia.com"
+          }
+        ]))
+      })
+    })
+  }
+})
+</script>
+<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+<div class="wistia_embed wistia_async_4d8229898d" style="width:640px;height:360px;">&nbsp;</div>
+{% endcodeblock %}
+
+### Dynamic Annotations
+
+Your own script can take control of showing and hiding links. In this case, you can register a callback so that when the plugin loads, you can use its methods `.showLink()` and `.hideLink()` at will. The `.showLink()` method accepts an object with the same [annotation options](#annotation_options) as above, but ignores `time` and `duration`.
+
+To ensure your dynamic annotations do not conflict with any existig annotations set in the Customize panel, you must tell the Annotations plugin to ignore them with the `{links: false}` option.
+
+{% codeblock annotations-manual.html %}
+<script>
+(window._wq = window._wq || []).push({
+  "4d8": {
     plugin: {
       "midrollLink-v1": {
-        manualModeOn: true
+        links: false
       }
     }
-  });
+  }
+});
 
-  var myCustomLink = {text: 'Click here!', url: 'https://wistia.com'};
-  var isShowingLink = false;
+(window._wq = window._wq || []).push({
+  "4d8": function(wistiaEmbed) {
+    var myCustomLink = {text: 'Click here!', url: 'https://wistia.com'};
+    var isShowingLink = false;
 
-  wistiaEmbed.bind('timechange', function(timeInSeconds) {
-    if (timeInSeconds > 10 && timeInSeconds < 20 && !isShowingLink) {
-      wistiaEmbed.plugin['midrollLink-v1'].forceShowLink(myCustomLink);
-      isShowingLink = true;
-    }
-    else if (isShowingLink) {
-      wistiaEmbed.plugin['midrollLink-v1'].forceHideLink();
-      isShowingLink = false;
-    }
-  });
+    wistiaEmbed.plugin('midrollLink-v1', function(annotation) {
+      wistiaEmbed.bind('timechange', function(timeInSeconds) {
+        if (timeInSeconds > 10 && timeInSeconds < 20) {
+          if (!isShowingLink) {
+            annotation.showLink(myCustomLink);
+            isShowingLink = true;
+          }
+        }
+        else if (isShowingLink) {
+          annotation.hideLink();
+          isShowingLink = false;
+        }
+      });
+    })
+  }
+});
 </script>
+<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+<div class="wistia_embed wistia_async_4d8229898d" style="width:640px;height:360px;">&nbsp;</div>
 {% endcodeblock %}
-
-<div style="display:none;" class="navigable_end"></div>

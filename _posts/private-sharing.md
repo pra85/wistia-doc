@@ -2,22 +2,19 @@
 title: Sharing Video Privately
 layout: post
 category: embed and share
-description: Wistia makes it easy to privately share your videos with people. Invite people via email, and track how they watch in a secure environment.
-post_intro: <p>For many users, video is something that needs to be shared only amongst a few individuals; otherwise it should be completely private.</p><p>With Wistia, your account is both secure and not indexed - you can't search Google to find the videos inside.  So if you want to share the video, but keep it secure, this guide is here to help.</p><p>Private sharing is right for you if you want to:</p><ul><li>Review and Approve content before it goes live</li><li>Share instructional videos with your team</li><li>Create internal content that contains sensitive information</li><li>Charge your customers to view content in a secure environment</li>
+description: Wistia makes it easy to privately share your videos with people right within the Wistia app. Invite people to your account via email, and track how they watch in a secure environment.
+post_intro: <p>Your Wistia account isn't crawled by search engines, but you might not always want to embed your videos in order to share them. That's where Wistia's Private Sharing functionality comes in. Wistia allows you to invite users to your account, lets you assign permissions to each viewer (or groups of viewers), and monitor their viewing activity.</p><p>Private sharing is right for you if you want to:</p><ul><li>Review and approve content before it goes live</li><li>Share instructional videos with your team</li><li>Create internal content that contains sensitive information</li><li>Charge your customers to view content in a secure environment</li>
 footer: 'for_beginners'
 ---
 
-<div id="bumper_test" class="wistia_embed" style="width:730px;height:411px;">&nbsp;</div>
-<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
-<script>
-  var testArray = ['rz17xouyzk','418xma6o6q']
-  var randHashedId = testArray[Math.floor(Math.random() * testArray.length)];
-  wistiaEmbed = Wistia.embed(randHashedId, {
-    container: 'bumper_test'  
-  });
-</script>
+{% wistia_embed hashed_id: rz17xouyzk %}
 
-----
+## What is Private Sharing?
+
+Private Sharing in Wistia allows you to add users to your specific projects and
+allow them access to your videos. Wistia videos in your account aren't crawled
+by search engines, so until you share your videos (via direct URLs, or embedding
+them) they won't come up with a quick Google search.
 
 ## Invite Viewers
 

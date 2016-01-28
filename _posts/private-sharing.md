@@ -11,18 +11,31 @@ footer: 'for_beginners'
 
 ## What is Private Sharing?
 
-Private Sharing in Wistia allows you to add users to your specific projects and
-allow them access to your videos. Wistia videos in your account aren't crawled
-by search engines, so until you share your videos (via direct URLs, or embedding
-them) they won't come up with a quick Google search.
+Private Sharing in Wistia allows you to add users to your individual projects and
+give them specific accesses and controls around to your videos. Wistia videos in
+your account aren't crawled by search engines, so until you share your videos
+(via direct URLs, or embedded on your website) they will remain private.
 
-## Invite Viewers
+You will only need to use Private Sharing if you want to further
+restrict access to your videos, invite users to add or update content in your
+projects, or share and monitor internal content.
+
+If you're confident that Private Sharing is right for you, let's get started!
+
+## Invite Contacts
 
 {% post_image hashed_id: 'b7f77d7e188bc953dfd491ae12d9476ee44f5c2c', class: 'center' %}
 
+Your first move in Private Sharing (after you've
+[uploaded]({{ '/upload' | post_url }}) and
+[customized]({{ '/customizing-your-video' | post_url }}) your video of course)
+is to invite contacts to your project. You can do this on the
+[Users](https://my.wistia.com/contacts) page in your account, or on individual
+project. Let's first walk through adding contacts to a project.
+
 Managers in your Wistia account can invite new viewers to view private content
-using the "Sharing and Privacy" feature.  From the Project screen, select
-"Sharing and Privacy" from under the blue "Project Actions" drop-down menu. Or,
+using the *Sharing & Privacy* feature. From the Project page, select
+*Sharing & Privacy* from under the blue **Project Action** drop-down menu. Or,
 click on the padlock icon next to the title of the project.
 
 Next, in the box where it says "Enter email addresses to add users," type in the email addresses for contact you'd like to share the project privately with. You can also customize the test of the message by clicking "Add a personal message."

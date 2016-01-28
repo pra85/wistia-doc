@@ -33,21 +33,25 @@ is to invite contacts to your project. You can do this on the
 [Users](https://my.wistia.com/contacts) page in your account, or on individual
 project. Let's first walk through adding contacts to a project.
 
-Managers in your Wistia account can invite new viewers to view private content
-using the *Sharing & Privacy* feature. From the Project page, select
-*Sharing & Privacy* from under the blue **Project Action** drop-down menu. Or,
-click on the padlock icon next to the title of the project.
+[Managers]({{ '/permissions#managerlevel_permissions | post_url }}) in your
+Wistia account can invite new contacts to view private content using the
+*Sharing & Privacy* feature.
 
-Next, in the box where it says "Enter email addresses to add users," type in the email addresses for contact you'd like to share the project privately with. You can also customize the test of the message by clicking "Add a personal message."
+From the Project page, select *Sharing & Privacy* from under the blue
+**Project Action** dropdown menu. You can also click on the padlock icon next
+to the title of the project.
+
+<!---
+Screencast of both
+--->
+
+In the box where it says "Enter email addresses to add users," do just that!
+Type in the email addresses for contacts you'd like to share the project
+privately with. You can also customize the text of the message by clicking
+"Add a personal message."
 
 {% post_image hashed_id: '82a0ef0b697b5f311d80bb9ef7fe07ca73437358', class: 'center' %}
 
-
-<div class="faq">
-<h4><i class="icon-search"></i> FAQ: Why don't I set a password for my viewers?</h4>
-
-<p>The best way for unwanted viewers to view secure content is through the original email.  Sending a group email that contains the login and password needed to access secure content can be grabbed easily: from a stolen laptop, from a hacked email account, even read right off the screen at a coffee shop.  With Wistia, your invited viewers receive an email with a one-time use activation code, and then create their own password.</p>
-</div>
 
 ## Privately Share Video By Link
 
@@ -188,3 +192,9 @@ customize the email message that is sent out as well. Here is what that Sharing
 screen looks like:
 
 {% post_image hashed_id: '3f02151ecc91df28777bc63ac177d8dc66223439', class: 'center' %}
+
+## Private Sharing FAQ
+
+### Why don't I set a password for my viewers?
+
+The best way for unwanted viewers to view secure content is through the original email. Sending a group email that contains the login and password needed to access secure content can be grabbed easily: from a stolen laptop, from a hacked email account, even read right off the screen at a coffee shop. With Wistia, your invited viewers receive an email with a one-time use activation code, and then create their own password.

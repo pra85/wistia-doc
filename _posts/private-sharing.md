@@ -41,9 +41,7 @@ From the Project page, select *Sharing & Privacy* from under the blue
 **Project Action** dropdown menu. You can also click on the padlock icon next
 to the title of the project.
 
-<!---
-Screencast of both
---->
+{% wistia_embed hashed_id: 4zfm9807d0 %}
 
 In the box where it says "Enter email addresses to add users," do just that!
 Type in the email addresses for contacts you'd like to share the project

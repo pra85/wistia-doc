@@ -111,6 +111,9 @@ To give the Section a title, hover over the title text, select the
 To delete a project, select *Delete Project* from under the
 <span class="action_menu">Project Actions</span> menu.
 
+{{ "Deleted projects can't be restored, so make sure you absolutely want
+to delete your project before proceeding." | alert }}
+
 {% post_image hashed_id: '206d83a6cf49018acfa4a6ee39d8f2d393f1f0fc', class: 'center' %}
 
 Say *sayonara* to that project!

@@ -130,6 +130,21 @@ documentation.
 You can also allow any viewers to download your video via a Social Bar button.
 [More on that here.]({{'/customizing-your-video#social_bar' | post_url}})
 
+## Deleting Media
+
+{{ "Deleted medias can't be restored, so make sure you absolutely want
+to delete your media before proceeding." | alert }}
+
+To delete a media, select *Delete* from under the
+<span class="action_menu">Video Actions</span> menu.
+
+{% post_image hashed_id: '383e7f81a6f47a29e2a5a53b21e6a0834d9b1429', class: 'center' %}
+
+Or, if you're in a Project, just click that cute lil' *X* to the right of your
+media.
+
+{% post_image hashed_id: '4d17ba7d5090fab4e84881b713894aa402e3350f', class: 'center' %}
+
 ## Timecoded Comments
 
 Timecoded comments allow the user to link a comment on a video to a particular
